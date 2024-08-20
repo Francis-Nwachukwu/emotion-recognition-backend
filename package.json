@@ -2,7 +2,8 @@
   "name": "emoRec",
   "version": "1.0.0",
   "description": "",
-  "main": "/src/app.ts",
+  "main": "dist/app",
+  "typings": "src/typeDeclaration.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node ./src/app.ts",
