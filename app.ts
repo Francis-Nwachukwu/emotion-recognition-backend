@@ -2,7 +2,8 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import routes from "./routes/index";
+import routes from "./src/routes/index";
+// import routes from "./routes/index";
 import path from "path";
 import fs from "fs";
 

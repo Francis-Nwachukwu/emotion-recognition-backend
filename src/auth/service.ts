@@ -2,9 +2,9 @@ import { models } from "../models";
 import { IUser } from "../types/userTypes";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { jwtSecret } from "../app";
+import { jwtSecret } from "../../app";
+// import { jwtSecret } from "../app";
 import { logger } from "../utils";
-
 
 export const registerUserService = async (userData: IUser) => {
   userData?.email?.toLowerCase();
@@ -24,7 +24,6 @@ export const registerUserService = async (userData: IUser) => {
 
     const userId = newUser._id;
 
-
     return {
       success: true,
       message: `${userData.firstName} created successfully`,
@@ -43,7 +42,6 @@ export const loginService = async (email: string, password: string) => {
 
     const existingUser: any = await models.User.findOne(userDetails);
 
-
     if (existingUser) {
       const decodedPassword = await bcrypt.compare(
         password,
@@ -51,7 +49,6 @@ export const loginService = async (email: string, password: string) => {
       );
 
       if (decodedPassword) {
-
         const userId = existingUser._id;
 
         const token = await jwt.sign({ userId }, jwtSecret, {
