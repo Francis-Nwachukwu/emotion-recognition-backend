@@ -2,8 +2,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import routes from "./src/routes/index";
-// import routes from "./routes/index";
+import routes from "./routes/index";
 import path from "path";
 import fs from "fs";
 
@@ -15,10 +14,6 @@ const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/school";
 app.use(cors());
 app.use(express.static("uploads"));
 app.use(express.json());
-
-//  "dev": "nodemon --exec ts-node ./src/app.ts",
-//     "build": "tsc",
-//     "start": "node dist/app.js"
 
 export const jwtSecret = process.env.SESSION_SECRET || "3y6T$#r9D@2sP!zW";
 const uploadsDir = process.env.UPLOADS_DIR || "uploads";

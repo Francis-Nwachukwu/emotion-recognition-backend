@@ -2,8 +2,7 @@ import { models } from "../models";
 import { IUser } from "../types/userTypes";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { jwtSecret } from "../../app";
-// import { jwtSecret } from "../app";
+import { jwtSecret } from "../app";
 import { logger } from "../utils";
 
 export const registerUserService = async (userData: IUser) => {
