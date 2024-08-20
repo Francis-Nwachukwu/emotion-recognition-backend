@@ -17,6 +17,9 @@ app.use(express.json());
 
 export const jwtSecret = process.env.SESSION_SECRET || "3y6T$#r9D@2sP!zW";
 const uploadsDir = process.env.UPLOADS_DIR || "uploads";
+const weightsDir = process.env.WEIGHTS_DIR || "weights";
+
+console.log("===Weights===", weightsDir);
 
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({
